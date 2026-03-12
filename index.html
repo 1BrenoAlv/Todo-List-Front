@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="Um site para organizar suas tarefas!">
+    <meta name="keywords" content="Task Supply, Tarefas, Organização">
+    <title>Task Supply</title>
+    <link rel="stylesheet" href="./css/reset-style.css">
+    <link rel="stylesheet" href="./css/main-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo-nav">
+                <h1>Task Supply 📝</h1>
+            </div>
+            <div class="status-nav">
+                <ul class="lista-status">
+                    <li class="status">Concluido</li>
+                    <li class="status">Pendente</li>
+                    <li class="status">Atrasado</li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <p>Lista de tarefas para fins estudantis</p>
+                <p>&copy;1brenoalv</p>
+            </div>
+        </nav>
+        <div class="container-principal">
+            <header>
+                <h2>Organize o seu tempo!</h2>
+            </header>
+            <main>
+                <div class="container-tarefa">
+                    <h2>Crie sua Tarefa</h2>
+                    <form class="form-tarefa">
+                        <div class="container-obrigatorio">
+                            <div class="text-input">
+                                <label for="titulo">Titulo</label>
+                                <input type="text" placeholder="Digite seu Titulo" required>
+                            </div>
+                            <div class="text-input">
+                                <label for="descricao">Descrição</label>
+                                <input class="text-input" type="text" placeholder="Digite sua Descrição" required>
+                            </div>
+                        </div>
+                        <div class="container-opcional">
+                            <div class="text-input">
+                                <a href="#">Deseja inserir hora estimada para tarefa? (Opcional)</a>
+                                <input type="date">
+                            </div>
+                            <div class="text-input">
+                                <label for="corCard" id="fundo-card">Cor do Card</label>
+                                <input type="color" required>
+                            </div>
+                        </div>
+                        <input type="submit" value="Criar">
+                    </form>
+                </div>
+                <div class="container-sua-tarefa">
+                    <h2>Suas Tarefas</h2>
+                    <div class="lista-tarefa">
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarefa">
+                            <div class="informacao-tarefa">
+                                <p>12/03 - 14:03</p>
+                                <div class="favorito-tarefa">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="conteudo-tarefa">
+                                <div class="titulo-tarefa">
+                                    <h4>Perguntar o que o Fabio está fazendo</h4>
+                                </div>
+                                <div class="descricao-tarefa">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
+                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
+                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
+                                        repellendus.</p>
+                                </div>
+                                <div class="opcional-tarefa">
+                                    <a class="status-tarefa">Pendente</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

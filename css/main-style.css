@@ -1,0 +1,191 @@
+:root{
+    --bg-fundo-container: rgb(4, 16, 32);
+    --border-color-container: rgba(71, 84, 110, 0.747);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+
+    & nav{
+        position: fixed;
+         top: 0;      
+        left: 0; 
+        width: 16vw;
+        background-color: var(--bg-fundo-container);
+        height: 100vh;
+        box-shadow: 2px 0px 8px  var(--border-color-container);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem 1.5rem;
+
+        & .logo-nav{
+            & h1{
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+        & .status-nav{
+            & .lista-status{
+             list-style-type: none;
+        }
+     }
+     & .footer-nav{
+
+     }
+    }
+    & .container-principal{
+        width: 84vw;
+        margin-left: 16vw;
+
+        & header{
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 2px solid var(--border-color-container);
+
+
+            & h2{
+
+            }
+
+        }
+
+        & .container-tarefa{
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+
+            & h2{
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+            
+            & .form-tarefa{
+                margin: auto;
+                padding: 2rem 1.5rem;
+                width: 40rem;
+                background-color: var(--bg-fundo-container);
+                border-radius: 20px;
+               box-shadow: 0px 0px 8px  var(--border-color-container);
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 16px;
+
+                & .text-input{
+                    display: flex;
+                    flex-direction: column;
+
+                }
+                & input{
+                    border: none;
+                    padding: 0.5rem;
+                    color: black;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    background-color: rgb(186, 186, 209);
+                }
+                & input[type="submit"]{
+                    background-color: rgb(16, 16, 131);
+                    color: white;
+                    font-size: 16px;
+                }
+                & a{
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    color: white;
+                }
+                & .container-opcional{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+        & .container-sua-tarefa{
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            
+            & h2{
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            & .lista-tarefa{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 20px;
+                gap: 50px;
+
+                & .tarefa{
+                    border: 1px solid;
+                    width: 30rem;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 20px 5px;
+
+                    & .informacao-tarefa{
+                        display: flex;
+                        justify-content: space-between;
+                        background-color: var(--bg-fundo-container);
+                        padding: 1rem;
+                       border-radius: 20px 5px;
+
+                        & p{
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+
+                    }
+                    & .conteudo-tarefa{
+                        padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    
+
+
+                       & .titulo-tarefa{
+                        font-size: 23px;
+                        font-weight: bold;
+                        color: blueviolet;
+                    }
+
+                    & .descricao-tarefa{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: yellow;
+                            margin-bottom: 10px;
+                    } 
+                    
+                    & .opcional-tarefa{
+                        & .status-tarefa{
+                            font-size: 14px;
+                            background-color: rgb(175, 117, 8);
+                            border: 1px solid orange;
+                            border-radius: 10px;
+                            padding: 2px 5px;
+                        }
+                    }
+                    }
+
+                    
+
+                }
+
+            }
+        }
+    }
+}
