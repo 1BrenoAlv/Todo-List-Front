@@ -1,15 +1,27 @@
 :root{
-    --bg-fundo-container: rgb(4, 16, 32);
-    --border-color-container: rgba(71, 84, 110, 0.747);
+    --bg-fundo: #eef4ed;
+    --bg-fundo-container: #134074;
+    --border-color-container: #13315c;
+
+    --text-fundo-claro: #0B2545;
+    --text-fundo-escuro: #EEF4ED;
+    --text-concluido: #29ce0c;
+    --text-pendente: #bd850c;
+    --text-atrasado: #ce0c0c;
+    
 }
 
-.container{
+body{   
+    background-color: var(--bg-fundo);
+
+    & .container{   
     display: flex;
     justify-content: center;
     flex-direction: row;
     width: 100%;
+    color: var(--text-fundo-claro);
 
-    & nav{
+        & nav{
         position: fixed;
          top: 0;      
         left: 0; 
@@ -22,6 +34,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 2rem 1.5rem;
+        color: var(--text-fundo-escuro);
 
         & .logo-nav{
             & h1{
@@ -32,9 +45,45 @@
         & .status-nav{
             & .lista-status{
              list-style-type: none;
+             background-color: var(--bg-fundo-container);
+             padding: 1.5rem;
+             border: 2px solid var(--border-color-container);
+             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+             border-radius: 20px;
+
+             & .status{
+                margin: 10px;
+                font-weight: bold;
+                color: var(--text-concluido);
+                transition: all 0.2s ease;
+             }
+
+             & .status:hover{
+                transform: translateY(-5px);
+             }
+
+             & .status:nth-child(2){
+                font-weight: bold;
+                color: var(--text-pendente);
+             }
+             & .status:nth-child(3){
+                font-weight: bold;
+                color: var(--text-atrasado);
+             }
+
         }
      }
      & .footer-nav{
+        text-align: center;
+    
+
+        & p:nth-child(1){
+            font-size: 14px;
+        }
+        & p:nth-child(2){
+            font-weight: bold;
+            font-style: italic;
+        }
 
      }
     }
@@ -132,7 +181,7 @@
 
                 & .tarefa{
                     border: 1px solid;
-                    width: 30rem;
+                    width: 25rem;
                     display: flex;
                     flex-direction: column;
                     border-radius: 20px 5px;
@@ -189,3 +238,5 @@
         }
     }
 }
+}
+ 
