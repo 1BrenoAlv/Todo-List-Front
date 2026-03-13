@@ -30,10 +30,6 @@
             </div>
         </nav>
         <div class="container-principal">
-            <header>
-                <!-- <h2>Organize o seu tempo!</h2> -->
-                <h2>EM DESENVOLVIMENTOOOOO</h2>
-            </header>
             <main>
                 <div class="container-tarefa">
                     <h2>Crie sua Tarefa</h2>
@@ -41,167 +37,44 @@
                         <div class="container-obrigatorio">
                             <div class="text-input">
                                 <label for="titulo">Titulo</label>
-                                <input type="text" placeholder="Digite seu Titulo" required>
+                                <input for="titulo" id="titulo" type="text" placeholder="Digite seu Titulo" required>
                             </div>
                             <div class="text-input">
                                 <label for="descricao">Descrição</label>
-                                <textarea class="text-input" type="text" placeholder="Digite sua Descrição"
-                                    required></textarea>
+                                <textarea for="descricao" id="descricao" class="text-input" type="text"
+                                    placeholder="Digite sua Descrição" required></textarea>
                             </div>
                         </div>
                         <div class="container-opcional">
                             <div class="text-input">
-                                <a href="#">Deseja inserir hora estimada para tarefa? (Opcional)</a>
-                                <input type="date">
-                            </div>
-                            <div class="text-input">
-                                <label for="corCard" id="fundo-card">Cor do Card</label>
-                                <input type="color" required>
+                                <label for="data">Prazo Estimado (Opcional)</label>
+                                <input for="data" type="date">
                             </div>
                         </div>
-                        <input type="submit" value="Criar">
+                        <input onclick="" type="submit" value="Criar Tarefa">
                     </form>
                 </div>
                 <div class="container-sua-tarefa">
-                    <h2>Suas Tarefas</h2>
+                    <div class="cabecalho-lista">
+
+                        <h2>Suas Tarefas</h2>
+                        <div class="tipo-filtro">
+                            <h2>Filtre suas tarefas:</h2>
+                            <span class="filtro" onclick="filtrarTarefas('Concluido')">Concluido</span>
+                            <span class="filtro" onclick="filtrarTarefas('Pendente')">Pendente</span>
+                            <span class="filtro" onclick="filtrarTarefas('Atrasado')">Atrasado</span>
+                            <span class="filtro" onclick="filtrarTarefas('Todos')">Todas</span>
+                        </div>
+                    </div>
+
                     <div class="lista-tarefa">
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tarefa">
-                            <div class="informacao-tarefa">
-                                <p>12/03 - 14:03</p>
-                                <div class="favorito-tarefa">
-                                    <input type="checkbox">
-                                </div>
-                            </div>
-                            <div class="conteudo-tarefa">
-                                <div class="titulo-tarefa">
-                                    <h4>Perguntar o que o Fabio está fazendo</h4>
-                                </div>
-                                <div class="descricao-tarefa">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium quam
-                                        illum, quis quidem error nihil blanditiis ipsam et laborum voluptatibus
-                                        asperiores doloribus reiciendis consectetur animi perferendis laboriosam sit
-                                        repellendus.</p>
-                                </div>
-                                <div class="opcional-tarefa">
-                                    <a class="status-tarefa">Pendente</a>
-                                </div>
-                            </div>
-                        </div>
+                        <p style="text-align: center; opacity: 0.5;">Nenhuma tarefa por aqui ainda... 😴</p>
                     </div>
                 </div>
             </main>
         </div>
     </div>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
