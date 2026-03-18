@@ -9,6 +9,7 @@
     <title>Task Supply</title>
     <link rel="stylesheet" href="./css/reset-style.css">
     <link rel="stylesheet" href="./css/main-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -30,54 +31,90 @@
             </div>
         </nav>
         <div class="container-principal">
-            <main>
-                <div class="container-tarefa">
-                    <h2>Crie sua Tarefa</h2>
-                    <form class="form-tarefa">
-                        <div class="container-obrigatorio">
-                            <div class="text-input">
-                                <label for="titulo">Titulo</label>
-                                <input for="titulo" id="titulo" type="text" placeholder="Digite seu Titulo" required>
-                            </div>
-                            <div class="text-input">
-                                <label for="descricao">Descrição</label>
-                                <textarea for="descricao" id="descricao" class="text-input" type="text"
-                                    placeholder="Digite sua Descrição" required></textarea>
-                            </div>
+            <div class="container-tarefa">
+                <h2>Crie sua Tarefa</h2>
+                <form class="form-tarefa">
+                    <div class="container-obrigatorio">
+                        <div class="text-input">
+                            <label for="titulo">Titulo</label>
+                            <input for="titulo" id="titulo" type="text" placeholder="Digite seu Titulo" required>
                         </div>
-                        <div class="container-opcional">
-                            <div class="text-input">
-                                <label for="data">Prazo Estimado (Opcional)</label>
-                                <input for="data" type="date">
-                            </div>
-                        </div>
-                        <input onclick="" type="submit" value="Criar Tarefa">
-                    </form>
-                </div>
-                <div class="container-sua-tarefa">
-                    <div class="container-conteudo-lista">
-
-                        <div class="cabecalho-lista">
-    
-                            <h2>Suas Tarefas</h2>
-                            <div class="tipo-filtro">
-                                <h2>Filtre suas tarefas:</h2>
-                                <span class="filtro" onclick="filtrarTarefas('Concluido')">Concluido</span>
-                                <span class="filtro" onclick="filtrarTarefas('Pendente')">Pendente</span>
-                                <span class="filtro" onclick="filtrarTarefas('Atrasado')">Atrasado</span>
-                                <span class="filtro" onclick="filtrarTarefas('Todos')">Todas</span>
-                            </div>
-                        </div>
-    
-                        <div class="lista-tarefa">
-                            <p style="text-align: center; opacity: 0.5;">Nenhuma tarefa por aqui ainda... 😴</p>
+                        <div class="text-input">
+                            <label for="descricao">Descrição</label>
+                            <textarea for="descricao" id="descricao" class="text-input" type="text"
+                                placeholder="Digite sua Descrição" required></textarea>
                         </div>
                     </div>
+                    <div class="container-opcional">
+                        <div class="text-input">
+                            <label for="data">Prazo Estimado (Opcional)</label>
+                            <input for="data" type="datetime-local">
+                        </div>
+                    </div>
+                    <input onclick="" type="submit" value="Criar Tarefa">
+                </form>
+            </div>
+            <div class="container-sua-tarefa">
+                <div class="container-conteudo-lista">
+
+                    <div class="cabecalho-lista">
+
+                        <h2>Suas Tarefas</h2>
+                        <div class="tipo-filtro">
+                            <h2>Filtre suas tarefas:</h2>
+                            <span class="filtro" onclick="filtrarTarefas('Concluido')">Concluido</span>
+                            <span class="filtro" onclick="filtrarTarefas('Pendente')">Pendente</span>
+                            <span class="filtro" onclick="filtrarTarefas('Atrasado')">Atrasado</span>
+                            <span class="filtro" onclick="filtrarTarefas('Todos')">Todas</span>
+                        </div>
+                    </div>
+
+                    <div class="lista-tarefa">
+                    </div>
                 </div>
-            </main>
+            </div>
+
         </div>
     </div>
-    <script src="./script/script.js"></script>
+    <div class="overlay-modal" id="modalEditar">
+        <div class="modal-conteudo">
+            <div class="cabecalho-modal">
+                <h2>Editar Tarefa</h2>
+                <button class="fechar-modal" onclick="fecharModal()">&times;</button>
+            </div>
+
+            <form class="form-tarefa form-editar" onsubmit="salvarEdicao(event)">
+                <div class="text-input">
+                    <label for="edit-titulo">Título</label>
+                    <input type="text" id="edit-titulo" placeholder="Edite o título" required>
+                </div>
+
+                <div class="text-input">
+                    <label for="edit-descricao">Descrição</label>
+                    <textarea id="edit-descricao" placeholder="Edite a descrição" required></textarea>
+                </div>
+
+                <div class="container-opcional">
+                    <div class="text-input">
+                        <label for="edit-data">Prazo Estimado</label>
+                        <input type="datetime-local" id="edit-data">
+                    </div>
+
+                    <div class="text-input">
+                        <label for="edit-status">Status</label>
+                        <select id="edit-status">
+                            <option value="Pendente">Pendente</option>
+                            <option value="Concluido">Concluído</option>
+                            <option value="Atrasado">Atrasado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <input type="submit" value="Salvar Alterações">
+            </form>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

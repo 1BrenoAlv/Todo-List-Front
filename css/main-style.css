@@ -73,6 +73,7 @@ body{
                     font-weight: bold;
                     color: var(--text-concluido);
                     transition: all 0.2s ease;
+                    cursor: default;
                 }
 
                 & .status:hover{
@@ -105,6 +106,8 @@ body{
      }
     }
     & .container-principal{
+        display: flex;
+        flex-direction: column;
         width: 84vw;
         margin-left: 16vw;
         min-height: 100vh;
@@ -113,6 +116,7 @@ body{
             padding: 2rem;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-direction: column;
             gap: 10px;
 
@@ -123,7 +127,6 @@ body{
             }
             
             & .form-tarefa{
-                margin: auto;
                 padding: 2rem 1.5rem;
                 width: 40rem;
                 background-color: var(--bg-fundo-container);
@@ -192,18 +195,19 @@ body{
             background-color: #8da9c475;
             border: none;
             border-radius: 10px 10px 0px 0px;
-            position: fixed;
-            bottom: 0;
-            width: 100vw;
+            width: 100%;
             box-sizing: border-box;
             align-items: center;
-            padding-right: 2rem;
+            flex-grow: 1;
 
             & .container-conteudo-lista{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                width: 100%;
                 padding: 2rem;
+                gap: 2rem;
 
             & .cabecalho-lista{
                 display: flex;
@@ -262,18 +266,29 @@ body{
 
             & .lista-tarefa{
                 display: flex;
-                flex-direction: row;
-                justify-content: center;
                 flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px; 
                 margin-bottom: 20px;
-                gap: 50px;
+                align-items: center;
+              
+                
+                & #mensagem-vazio{
+                    text-align: center; 
+                    opacity: 0.5;
+                }
+
 
                 & .tarefa{
-                    width: 25rem;
+                    width: 26rem;
+                    max-width: 26rem;
                     display: flex;
+                    word-wrap: break-word;
                     flex-direction: column;
                     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
                     border-radius: 20px 5px;
+                    overflow-wrap: break-word;
+                    overflow: hidden;
 
                     & .informacao-tarefa{
                         display: flex;
@@ -285,23 +300,50 @@ body{
                         font-size: 1rem;
                         border-radius: 20px 5px;
 
-                       & .opcional-tarefa{
+                        & .excluir-tarefa{
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                             & i{
+                                color: var(--text-atrasado);
+                            }
+                        }
+
+                        & .editar-tarefa{
+                             font-size: 1.2rem;
+                            cursor: pointer;
+                            & i{
+                                color: var(--text-concluido);
+                            }
+                        
+                        }
+
+
+                      
                         & .status-tarefa{
                             font-size: 14px;
-                            background-color: rgb(175, 117, 8);
-                            border: 1px solid orange;
                             border-radius: 10px;
                             padding: 2px 5px;
                         }
-                    }
+                        & .status-pendente {
+                            background-color: var(--fundo-status-pendente);
+                            border: 1px solid var(--text-pendente);
+                            color: white;
+                        }
 
-                    & input{
-                        width: 20px;
-                        height: 20px;
-                        cursor: pointer;
+                        & .status-concluido {
+                            background-color: var(--fundo-status-concluido);
+                            border: 1px solid var(--text-concluido);
+                            color: white;
+                        }
+                        & .status-atrasado {
+                            background-color: var(--fundo-status-atraso);
+                            border: 1px solid var(--text-atrasado);
+                            color: white;
+                        }
+                    & .opcao-tarefa{
+                        display: flex;
+                        gap: 10px;
                     }
-
-}
 
                     }
                     & .conteudo-tarefa{
@@ -328,13 +370,129 @@ body{
                     
                     
                     }
+                    & .horas-tarefa{
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 1rem;
+                        background-color: var(--bg-fundo-container);
+                        color: white;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
 
                     
 
                 }
 
             }
+            
+        }
+    }
+}   
+}
+.overlay-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 9999; 
+    justify-content: center;
+    align-items: center;
+
+    &.ativo {
+        display: flex;
+    }
+
+    & .modal-conteudo {
+        background-color: var(--bg-fundo-container);
+        width: 40rem;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+        color: var(--text-fundo-escuro);
+        animation: deslizarCima 0.3s ease-out;
+
+        & .cabecalho-modal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            & h2 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+
+            & .fechar-modal {
+                background: transparent;
+                border: none;
+                color: var(--text-fundo-escuro);
+                font-size: 35px;
+                cursor: pointer;
+            }
+             & .fechar-modal:hover {
+                    color: #ff4d4d;
+                }
+        }
+
+        & .form-editar {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            & .text-input {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                flex: 1;
+            }
+
+            & label {
+                font-weight: 500;
+            }
+
+            & input, & textarea, & select {
+                font-size: 1rem;
+                background-color: var(--text-fundo-escuro);
+                color: var(--text-fundo-claro);
+                padding: 1rem;
+                border: none;
+                border-radius: 15px;
+                outline: none;
+            }
+
+            & textarea {
+                resize: none;
+                min-height: 100px;
+            }
+
+            & .container-opcional {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+            }
+
+            & input[type="submit"] {
+                background-color: #1258a7;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                margin-top: 10px;
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: #075bbb;
+                }
+            }
         }
     }
 }
-}
+
+@keyframes deslizarCima {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}}
