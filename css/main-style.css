@@ -300,25 +300,20 @@ body{
                         font-size: 1rem;
                         border-radius: 20px 5px;
 
-                        & .excluir-tarefa{
-                        font-size: 1.2rem;
-                        cursor: pointer;
-                             & i{
-                                color: var(--text-atrasado);
-                            }
-                        }
-
-                        & .editar-tarefa{
+                        & .excluir-editar-tarefa{
                              font-size: 1.2rem;
                             cursor: pointer;
-                            & i{
-                                color: var(--text-concluido);
+                            display: flex;
+                            gap: 1rem;
+
+                            & a{
+                                color: var(--text-atrasado);
                             }
+                            & a:last-child{
+                                      color: var(--text-concluido);
+                                }
                         
                         }
-
-
-                      
                         & .status-tarefa{
                             font-size: 14px;
                             border-radius: 10px;
@@ -397,7 +392,7 @@ body{
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.85); 
     z-index: 9999; 
     justify-content: center;
     align-items: center;

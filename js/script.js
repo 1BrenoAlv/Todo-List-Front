@@ -7,16 +7,22 @@ let idInitial = 0
 let idTarefa = null;
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const titulo = form.querySelector('input[type="text"]').value
     const descricao = form.querySelector('textarea').value
     const data = form.querySelector('input[type="datetime-local"]').value
+
+    if (new Date(data) <= new Date()) {
+        alert('Não pode colocar uma data que já passou! Tente novamente.')
+        return
+    }
+
     const novaTarefa = {
         id: idInitial++,
-        titulo,
-        descricao,
-        data,
+        titulo: titulo,
+        descricao: descricao,
+        data: data,
         dataCriacao: new Date().toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }).replace(',', ''),
         statusTarefa: 'Pendente',
     }
@@ -56,10 +62,8 @@ function exibirTarefas(filtro = 'Todos') {
             <div class="opcional-tarefa">
                 <a class="status-tarefa status-${tarefa.statusTarefa.toLowerCase()}">${tarefa.statusTarefa}</a>
             </div>
-           <div class="excluir-tarefa">
+           <div class="excluir-editar-tarefa">
                 <a onclick="excluirTarefa(${tarefa.id})"><i class="bi bi-trash3-fill"></i></a>
-            </div>
-            <div class="editar-tarefa">
                 <a onclick="editarTarefa(${tarefa.id})"><i class="bi bi-pencil-square"></i></a>
             </div>
         </div>
@@ -99,7 +103,11 @@ function salvarEdicao(e) {
         const tarefa = tarefas.find(t => t.id == idTarefa)
         tarefa.titulo = document.getElementById('edit-titulo').value
         tarefa.descricao = document.getElementById('edit-descricao').value
-        tarefa.data = document.getElementById('edit-data').value
+        const data = tarefa.data = document.getElementById('edit-data').value
+        if (new Date(data) <= new Date()) {
+            alert('Não pode colocar uma data que já passou! Tente novamente.')
+            return
+        }
         tarefa.statusTarefa = document.getElementById('edit-status').value
         fecharModal()
         exibirTarefas()
