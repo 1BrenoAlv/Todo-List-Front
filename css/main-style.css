@@ -282,8 +282,10 @@ body{
                 & .tarefa{
                     width: 26rem;
                     max-width: 26rem;
+                    max-height: 17.5rem;
                     display: flex;
                     word-wrap: break-word;
+                    justify-content: space-between;
                     flex-direction: column;
                     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
                     border-radius: 20px 5px;
@@ -342,10 +344,9 @@ body{
 
                     }
                     & .conteudo-tarefa{
-                        padding: 1rem;
+                    padding: 1rem;
                     display: flex;
                     flex-direction: column;
-                    
 
 
                        & .titulo-tarefa{
@@ -373,6 +374,7 @@ body{
                         color: white;
                         font-size: 14px;
                         font-weight: bold;
+                        bottom: 0;
                     }
 
                     
